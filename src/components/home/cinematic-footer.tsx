@@ -126,7 +126,12 @@ export function CinematicFooter() {
                   className="inline-flex items-center gap-3 border border-orange-500 bg-orange-500 px-6 py-3 text-xs uppercase tracking-[0.22em] text-black transition hover:border-white/20 hover:bg-transparent hover:text-white"
                 >
                   <span>Enquire now</span>
-                  <span>↗</span>
+                  <span
+                    aria-hidden="true"
+                    className="not-italic font-light text-[1em] leading-none text-current"
+                  >
+                    &rarr;
+                  </span>
                 </Link>
               </Magnetic>
 
@@ -135,7 +140,12 @@ export function CinematicFooter() {
                 className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-zinc-300 transition hover:text-white"
               >
                 <span>View archive</span>
-                <span>→</span>
+                <span
+                  aria-hidden="true"
+                  className="not-italic font-light text-[1em] leading-none text-current"
+                >
+                  &rarr;
+                </span>
               </Link>
             </div>
           </div>
@@ -158,8 +168,11 @@ export function CinematicFooter() {
                   className="group inline-flex items-center justify-between border-b border-white/10 pb-2 text-xs uppercase tracking-[0.22em] text-zinc-200 transition hover:text-white md:justify-start md:gap-3 md:border-b-0 md:pb-0"
                 >
                   <span>Instagram</span>
-                  <span className="translate-x-0 text-zinc-500 transition duration-300 group-hover:translate-x-1 group-hover:text-white">
-                    ↗
+                  <span
+                    aria-hidden="true"
+                    className="translate-x-0 not-italic font-light text-[1em] leading-none text-zinc-500 transition duration-300 group-hover:translate-x-1 group-hover:text-white"
+                  >
+                    &rarr;
                   </span>
                 </a>
               </Magnetic>
@@ -172,8 +185,11 @@ export function CinematicFooter() {
                   className="group inline-flex items-center justify-between border-b border-white/10 pb-2 text-xs uppercase tracking-[0.22em] text-zinc-200 transition hover:text-white md:justify-start md:gap-3 md:border-b-0 md:pb-0"
                 >
                   <span>Vimeo</span>
-                  <span className="translate-x-0 text-zinc-500 transition duration-300 group-hover:translate-x-1 group-hover:text-white">
-                    ↗
+                  <span
+                    aria-hidden="true"
+                    className="translate-x-0 not-italic font-light text-[1em] leading-none text-zinc-500 transition duration-300 group-hover:translate-x-1 group-hover:text-white"
+                  >
+                    &rarr;
                   </span>
                 </a>
               </Magnetic>
@@ -184,8 +200,11 @@ export function CinematicFooter() {
                   className="group inline-flex items-center justify-between border-b border-white/10 pb-2 text-xs uppercase tracking-[0.22em] text-zinc-200 transition hover:text-white md:justify-start md:gap-3 md:border-b-0 md:pb-0"
                 >
                   <span>Email</span>
-                  <span className="translate-x-0 text-zinc-500 transition duration-300 group-hover:translate-x-1 group-hover:text-white">
-                    ↗
+                  <span
+                    aria-hidden="true"
+                    className="translate-x-0 not-italic font-light text-[1em] leading-none text-zinc-500 transition duration-300 group-hover:translate-x-1 group-hover:text-white"
+                  >
+                    &rarr;
                   </span>
                 </a>
               </Magnetic>
