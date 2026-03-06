@@ -123,15 +123,9 @@ export function CinematicFooter() {
               <Magnetic strength={0.2}>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-3 border border-orange-500 bg-orange-500 px-6 py-3 text-xs uppercase tracking-[0.22em] text-black transition hover:border-white/20 hover:bg-transparent hover:text-white"
+                  className="inline-flex items-center border border-orange-500 bg-orange-500 px-6 py-3 text-xs uppercase tracking-[0.22em] text-black transition hover:border-white/20 hover:bg-transparent hover:text-white"
                 >
                   <span>Enquire now</span>
-                  <span
-                    aria-hidden="true"
-                    className="not-italic font-light text-[1em] leading-none text-current"
-                  >
-                    &rarr;
-                  </span>
                 </Link>
               </Magnetic>
 
@@ -165,15 +159,9 @@ export function CinematicFooter() {
                   href="https://instagram.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="group inline-flex items-center justify-between border-b border-white/10 pb-2 text-xs uppercase tracking-[0.22em] text-zinc-200 transition hover:text-white md:justify-start md:gap-3 md:border-b-0 md:pb-0"
+                  className="group inline-flex items-center justify-between border-b border-white/10 pb-2 text-xs uppercase tracking-[0.22em] text-zinc-200 transition hover:text-white md:justify-start md:border-b-0 md:pb-0"
                 >
                   <span>Instagram</span>
-                  <span
-                    aria-hidden="true"
-                    className="translate-x-0 not-italic font-light text-[1em] leading-none text-zinc-500 transition duration-300 group-hover:translate-x-1 group-hover:text-white"
-                  >
-                    &rarr;
-                  </span>
                 </a>
               </Magnetic>
 
@@ -182,30 +170,18 @@ export function CinematicFooter() {
                   href="https://vimeo.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="group inline-flex items-center justify-between border-b border-white/10 pb-2 text-xs uppercase tracking-[0.22em] text-zinc-200 transition hover:text-white md:justify-start md:gap-3 md:border-b-0 md:pb-0"
+                  className="group inline-flex items-center justify-between border-b border-white/10 pb-2 text-xs uppercase tracking-[0.22em] text-zinc-200 transition hover:text-white md:justify-start md:border-b-0 md:pb-0"
                 >
                   <span>Vimeo</span>
-                  <span
-                    aria-hidden="true"
-                    className="translate-x-0 not-italic font-light text-[1em] leading-none text-zinc-500 transition duration-300 group-hover:translate-x-1 group-hover:text-white"
-                  >
-                    &rarr;
-                  </span>
                 </a>
               </Magnetic>
 
               <Magnetic strength={0.14}>
                 <a
                   href="mailto:hello@highendvisuals.com"
-                  className="group inline-flex items-center justify-between border-b border-white/10 pb-2 text-xs uppercase tracking-[0.22em] text-zinc-200 transition hover:text-white md:justify-start md:gap-3 md:border-b-0 md:pb-0"
+                  className="group inline-flex items-center justify-between border-b border-white/10 pb-2 text-xs uppercase tracking-[0.22em] text-zinc-200 transition hover:text-white md:justify-start md:border-b-0 md:pb-0"
                 >
                   <span>Email</span>
-                  <span
-                    aria-hidden="true"
-                    className="translate-x-0 not-italic font-light text-[1em] leading-none text-zinc-500 transition duration-300 group-hover:translate-x-1 group-hover:text-white"
-                  >
-                    &rarr;
-                  </span>
                 </a>
               </Magnetic>
             </div>
