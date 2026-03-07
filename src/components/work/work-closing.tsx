@@ -61,10 +61,9 @@ export function WorkClosing() {
 
             <Link
               href="/contact"
-              className="work-closing-reveal inline-flex items-center gap-3 border border-white/20 bg-white px-6 py-3 text-xs uppercase tracking-[0.22em] text-black transition hover:bg-transparent hover:text-white"
+              className="work-closing-reveal inline-flex items-center gap-3 border border-[#2f6b47] bg-[#2f6b47] px-6 py-3 text-xs uppercase tracking-[0.22em] text-white transition hover:border-white/20 hover:bg-transparent hover:text-white"
             >
               <span>Start a project</span>
-              <span>↗</span>
             </Link>
           </div>
         </div>

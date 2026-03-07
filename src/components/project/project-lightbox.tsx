@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import type { ProjectGalleryItem } from "@/data/projects";
 
 type Props = {
@@ -19,8 +20,14 @@ export function ProjectLightbox({
   onPrev,
   onNext,
 }: Props) {
+  const [mounted, setMounted] = useState(false);
+
   const isOpen = activeIndex !== null;
   const activeItem = activeIndex !== null ? items[activeIndex] : null;
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -40,10 +47,10 @@ export function ProjectLightbox({
     };
   }, [isOpen, onClose, onPrev, onNext]);
 
-  if (!isOpen || !activeItem) return null;
+  if (!mounted || !isOpen || !activeItem) return null;
 
-  return (
-    <div className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md">
+  return createPortal(
+    <div className="fixed inset-0 z-[999] bg-black/95 backdrop-blur-md">
       <div className="flex h-full flex-col">
         <div className="flex items-center justify-between border-b border-white/10 px-4 py-4 md:px-8">
           <p className="text-[10px] uppercase tracking-[0.22em] text-zinc-400 md:text-xs">
@@ -60,11 +67,11 @@ export function ProjectLightbox({
           </button>
         </div>
 
-        <div className="relative flex flex-1 items-center justify-center px-4 py-6 md:px-10 md:py-10">
+        <div className="relative flex flex-1 items-center justify-center px-4 py-4 md:px-10 md:py-10">
           <button
             type="button"
             onClick={onPrev}
-            className="absolute left-4 z-10 hidden border border-white/10 bg-black/40 px-4 py-3 text-xs uppercase tracking-[0.2em] text-zinc-300 transition hover:text-white md:block"
+            className="absolute left-3 top-1/2 z-10 hidden -translate-y-1/2 border border-white/10 bg-black/40 px-4 py-3 text-xs uppercase tracking-[0.2em] text-zinc-300 transition hover:text-white md:block"
           >
             Prev
           </button>
@@ -76,24 +83,45 @@ export function ProjectLightbox({
               fill
               sizes="100vw"
               className="object-contain"
+              priority
             />
           </div>
 
           <button
             type="button"
             onClick={onNext}
-            className="absolute right-4 z-10 hidden border border-white/10 bg-black/40 px-4 py-3 text-xs uppercase tracking-[0.2em] text-zinc-300 transition hover:text-white md:block"
+            className="absolute right-3 top-1/2 z-10 hidden -translate-y-1/2 border border-white/10 bg-black/40 px-4 py-3 text-xs uppercase tracking-[0.2em] text-zinc-300 transition hover:text-white md:block"
           >
             Next
           </button>
         </div>
 
         <div className="border-t border-white/10 px-4 py-4 md:px-8">
-          <p className="text-sm tracking-[-0.02em] text-zinc-300">
-            {activeItem.alt}
-          </p>
+          <div className="flex items-center justify-between gap-4">
+            <p className="text-sm tracking-[-0.02em] text-zinc-300">
+              {activeItem.alt}
+            </p>
+
+            <div className="flex items-center gap-2 md:hidden">
+              <button
+                type="button"
+                onClick={onPrev}
+                className="border border-white/10 px-3 py-2 text-[10px] uppercase tracking-[0.2em] text-zinc-300 transition hover:text-white"
+              >
+                Prev
+              </button>
+              <button
+                type="button"
+                onClick={onNext}
+                className="border border-white/10 px-3 py-2 text-[10px] uppercase tracking-[0.2em] text-zinc-300 transition hover:text-white"
+              >
+                Next
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

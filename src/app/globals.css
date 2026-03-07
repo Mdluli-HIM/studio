@@ -200,3 +200,7 @@ svg {
 .mobile-menu-cue {
   will-change: transform, opacity;
 }
+
+.work-filter-chip {
+  backdrop-filter: blur(8px);
+}

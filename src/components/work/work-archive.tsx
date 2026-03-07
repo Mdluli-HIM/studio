@@ -127,25 +127,39 @@ export function WorkArchive() {
                       (project) => project.category === filter
                     ).length;
 
+              const isActive = activeFilter === filter;
+
               return (
                 <button
                   key={filter}
                   type="button"
                   onClick={() => updateFilter(filter)}
                   className={clsx(
-                    "work-filter-chip inline-flex items-center gap-3 border px-4 py-2 text-[10px] uppercase tracking-[0.22em] transition md:text-xs",
-                    activeFilter === filter
-                      ? "border-white bg-white text-black"
-                      : "border-white/10 text-zinc-400 hover:border-white/30 hover:text-white"
+                    "work-filter-chip group inline-flex items-center gap-3 border px-4 py-2 text-[10px] uppercase tracking-[0.22em] transition-all duration-300 md:text-xs",
+                    isActive
+                      ? "border-white/30 bg-white/[0.04] text-white"
+                      : "border-white/10 bg-transparent text-zinc-400 hover:border-white/20 hover:bg-white/[0.02] hover:text-white"
                   )}
                 >
-                  <span>{filter}</span>
+                  <span className="flex items-center gap-2">
+                    <span>{filter}</span>
+
+                    {isActive ? (
+                      <span className="inline-flex items-center gap-2">
+                        <span className="h-1.5 w-1.5 rounded-full bg-white" />
+                        <span className="hidden text-[9px] tracking-[0.18em] text-zinc-500 md:inline">
+                          Current
+                        </span>
+                      </span>
+                    ) : null}
+                  </span>
+
                   <span
                     className={clsx(
-                      "text-[9px] md:text-[10px]",
-                      activeFilter === filter
-                        ? "text-black/70"
-                        : "text-zinc-600"
+                      "text-[9px] transition md:text-[10px]",
+                      isActive
+                        ? "text-zinc-500"
+                        : "text-zinc-600 group-hover:text-zinc-400"
                     )}
                   >
                     {String(count).padStart(2, "0")}

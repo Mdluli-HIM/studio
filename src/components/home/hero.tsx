@@ -18,22 +18,16 @@ export function Hero() {
         });
 
         tl.fromTo(
-          ".hero-kicker",
-          { opacity: 0, y: 16 },
-          { opacity: 1, y: 0, duration: 0.8 }
+          ".hero-frame-main, .hero-frame-left, .hero-frame-right",
+          { opacity: 0, scale: 1.08, y: 20 },
+          {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 1.2,
+            stagger: 0.1,
+          }
         )
-          .fromTo(
-            ".hero-frame-main, .hero-frame-left, .hero-frame-right",
-            { opacity: 0, scale: 1.08, y: 20 },
-            {
-              opacity: 1,
-              scale: 1,
-              y: 0,
-              duration: 1.2,
-              stagger: 0.1,
-            },
-            "-=0.45"
-          )
           .fromTo(
             ".hero-title-line",
             { yPercent: 110 },
@@ -132,18 +126,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.18),rgba(0,0,0,0.72))]" />
       </div>
 
-      <div className="container-luxury relative flex min-h-screen flex-col justify-between pt-28 pb-6 md:pt-32 md:pb-8">
-        <div className="hero-kicker flex items-center justify-between text-[10px] uppercase tracking-[0.24em] text-zinc-300 md:text-xs">
-          <span>Studio Noir</span>
-
-          <div className="hidden items-center gap-8 md:flex">
-            <span>Fashion</span>
-            <span>Promotional</span>
-            <span>Photography</span>
-            <span>Film</span>
-          </div>
-        </div>
-
+      <div className="container-luxury relative flex min-h-screen flex-col justify-end pt-28 pb-6 md:pt-32 md:pb-8">
         <div className="relative flex flex-1 items-center justify-center py-14 md:py-20">
           <div className="hero-media-wrap absolute left-1/2 top-1/2 w-[240px] -translate-x-1/2 -translate-y-1/2 md:w-[340px]">
             <div className="hero-frame-left absolute left-[-14%] top-[8%] aspect-[4/5] w-[78%] rotate-[-8deg] overflow-hidden bg-zinc-900 shadow-2xl">
