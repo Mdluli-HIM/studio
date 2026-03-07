@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import type { ProjectGalleryItem } from "@/data/projects";
 
@@ -20,14 +20,8 @@ export function ProjectLightbox({
   onPrev,
   onNext,
 }: Props) {
-  const [mounted, setMounted] = useState(false);
-
   const isOpen = activeIndex !== null;
   const activeItem = activeIndex !== null ? items[activeIndex] : null;
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -47,7 +41,7 @@ export function ProjectLightbox({
     };
   }, [isOpen, onClose, onPrev, onNext]);
 
-  if (!mounted || !isOpen || !activeItem) return null;
+  if (typeof window === "undefined" || !isOpen || !activeItem) return null;
 
   return createPortal(
     <div className="fixed inset-0 z-[999] bg-black/95 backdrop-blur-md">
